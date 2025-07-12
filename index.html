@@ -2,21 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/jpg" href="logo.jpg">
-  <title>Timetable</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pragati Timetable</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, sans-serif;
-      margin: 20px;
-      background-color: #fdfdfd;
+      background-color: #f5f5f5;
+      padding: 20px;
     }
 
     .header {
       text-align: center;
       font-family: 'Times New Roman', Times, serif;
       line-height: 1.6;
-      margin-bottom: 20px;
     }
 
     .header h2 {
@@ -33,14 +31,23 @@
     }
 
     .subheading {
+      border-top: 2px solid #000;
+      margin-top: 5px;
+      padding-top: 5px;
       font-weight: bold;
-      margin-top: 10px;
+    }
+
+    hr {
+      margin: 20px 0;
+      border: 1px solid #999;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 10px;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     th, td {
@@ -51,20 +58,19 @@
     }
 
     th {
-      background-color: beige;
+      background-color: #f0e9dd;
     }
 
     td[colspan] {
-      background-color: bisque;
+      background-color: #fde5a2;
       font-weight: bold;
     }
 
     td[rowspan] {
-      background-color: #f8f8f8;
+      background-color: #f9f9f9;
       font-weight: bold;
     }
 
-    /* Tooltip Style */
     .tooltip {
       position: relative;
       cursor: pointer;
@@ -72,7 +78,7 @@
 
     .tooltip .tooltiptext {
       visibility: hidden;
-      width: 160px;
+      width: 170px;
       background-color: #333;
       color: #fff;
       text-align: center;
@@ -91,52 +97,50 @@
       visibility: visible;
       opacity: 1;
     }
-
-    caption {
-      font-size: 18px;
-      font-weight: bold;
-      margin: 10px;
-    }
   </style>
 </head>
 <body>
 
-  <!-- Updated Pragati College Heading -->
+  <!-- Header -->
   <div class="header">
     <h2>PRAGATI ENGINEERING COLLEGE</h2>
     <p>(Approved by AICTE, Permanently Affiliated to JNTUK Kakinada & Accredited by NBA)</p>
     <p>#1-378, ADB Road, Surampalem, E.G. District, A.P. – 533 437</p>
-    <p>Ph: (08852) 252233, Fax: (08852) 252232 &nbsp; Website: 
-      <a href="http://www.pragati.ac.in" target="_blank">www.pragati.ac.in</a>
-    </p>
+    <p>Ph: (08852) 252233, Fax: (08852) 252232 &nbsp; Website: <a href="http://www.pragati.ac.in" target="_blank">www.pragati.ac.in</a></p>
     <p><strong>DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING</strong></p>
     <p class="subheading">2024–25 WEF 02.12.24 &nbsp; | &nbsp; III CSE 'B' &nbsp; | &nbsp; II SEM &nbsp; | &nbsp; Room No. G-9</p>
   </div>
 
-  <!-- Timetable Table -->
-  <h1 style="text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;">Timetable</h1>
-  <caption style="text-align: center;">II-II CSE-B</caption>
+  <hr>
 
+  <!-- Timetable -->
   <table>
     <tr>
-      <th>TIME/DAY</th>
-      <th>9-10AM</th>
-      <th>10-11AM</th>
-      <th>11-12PM</th>
-      <th>12-12:30PM</th>
-      <th>12:30-1:30PM</th>
-      <th>1:30-2:20PM</th>
-      <th>2:20-3:10PM</th>
-      <th>3:10-4:00PM</th>
+      <th rowspan="2">Days</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th rowspan="2">12:00–12:30pm</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+    </tr>
+    <tr>
+      <th>09:00–10:00am</th>
+      <th>10:00–11:00am</th>
+      <th>11:00–12:00pm</th>
+      <th>12:30–01:30pm</th>
+      <th>01:30–02:20pm</th>
+      <th>02:20–03:10pm</th>
+      <th>03:10–04:00pm</th>
     </tr>
 
     <!-- Monday -->
     <tr>
-      <th>MONDAY</th>
-      <td colspan="3" class="tooltip">DTI LAB
-        <span class="tooltiptext">Mrs. P. Lakshmi Satya</span>
-      </td>
-      <td rowspan="6">LUNCH</td>
+      <th>MON</th>
+      <td colspan="3" class="tooltip">DTI LAB<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
+      <td rowspan="6"><strong>LUNCH</strong></td>
       <td class="tooltip">P&S<span class="tooltiptext">Mr. P. Madhu Babu</span></td>
       <td class="tooltip">MEFA<span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span></td>
       <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
@@ -145,7 +149,7 @@
 
     <!-- Tuesday -->
     <tr>
-      <th>TUESDAY</th>
+      <th>TUE</th>
       <td class="tooltip">APT<span class="tooltiptext">Mr. P. Prasad Babu</span></td>
       <td class="tooltip">P&S<span class="tooltiptext">Mr. P. Madhu Babu</span></td>
       <td class="tooltip">DBMS<span class="tooltiptext">Dr. Y. Jayababu</span></td>
@@ -157,7 +161,7 @@
 
     <!-- Wednesday -->
     <tr>
-      <th>WEDNESDAY</th>
+      <th>WED</th>
       <td class="tooltip">OS LAB<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
       <td class="tooltip">OS LAB<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
       <td class="tooltip">OS LAB<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
@@ -169,19 +173,17 @@
 
     <!-- Thursday -->
     <tr>
-      <th>THURSDAY</th>
+      <th>THU</th>
       <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
       <td class="tooltip">MEFA<span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span></td>
       <td class="tooltip">DBMS<span class="tooltiptext">Dr. Y. Jayababu</span></td>
       <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
-      <td colspan="3" class="tooltip">DBMS LAB
-        <span class="tooltiptext">Dr. M. Uma Devi / Dr. Y. Jayababu</span>
-      </td>
+      <td colspan="3" class="tooltip">DBMS LAB<span class="tooltiptext">Dr. M. Uma Devi / Dr. Y. Jayababu</span></td>
     </tr>
 
     <!-- Friday -->
     <tr>
-      <th>FRIDAY</th>
+      <th>FRI</th>
       <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
       <td class="tooltip">MEFA<span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span></td>
       <td class="tooltip">DBMS<span class="tooltiptext">Dr. Y. Jayababu</span></td>
@@ -193,16 +195,13 @@
 
     <!-- Saturday -->
     <tr>
-      <th>SATURDAY</th>
-      <td colspan="3" class="tooltip">FSTD-1 LAB
-        <span class="tooltiptext">Mr. Y. Manas Kumar</span>
-      </td>
+      <th>SAT</th>
+      <td colspan="3" class="tooltip">FSTD-1 LAB<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
       <td class="tooltip">P&S<span class="tooltiptext">Mr. P. Madhu Babu</span></td>
       <td class="tooltip">MEFA<span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span></td>
       <td class="tooltip">DBMS<span class="tooltiptext">Dr. Y. Jayababu</span></td>
       <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
     </tr>
   </table>
-
 </body>
 </html>
