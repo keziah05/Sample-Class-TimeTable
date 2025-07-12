@@ -2,62 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Timetable with Custom Tooltips</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/jpg" href="logo.jpg">
+  <title>Timetable</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f6f8;
-      margin: 0;
-      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      margin: 20px;
+      background-color: #fdfdfd;
     }
 
-    h1 {
+    .header {
       text-align: center;
-      font-family: Georgia, 'Times New Roman', Times, serif;
-      color: #333;
+      font-family: 'Times New Roman', Times, serif;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .header h2 {
+      margin: 0;
+    }
+
+    .header p {
+      margin: 2px;
+    }
+
+    .header a {
+      color: #004080;
+      text-decoration: none;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      background-color: white;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    caption {
-      text-align: center;
-      font-size: 18px;
-      font-weight: bold;
-      margin: 15px 0;
-      color: #555;
+      margin-top: 10px;
     }
 
     th, td {
-      border: 1px solid #ddd;
-      padding: 12px;
+      border: 1px solid #999;
+      padding: 10px;
       text-align: center;
-      position: relative;
+      font-size: 15px;
     }
 
     th {
-      background-color: #f0e6d6;
-      color: #222;
+      background-color: beige;
     }
 
     td[colspan] {
-      background-color: #ffe5b4;
+      background-color: bisque;
       font-weight: bold;
     }
 
     td[rowspan] {
-      background-color: #f7f7f7;
+      background-color: #f8f8f8;
       font-weight: bold;
-      color: #444;
     }
 
+    /* Tooltip Style */
     .tooltip {
       position: relative;
       cursor: pointer;
@@ -69,15 +71,15 @@
       background-color: #333;
       color: #fff;
       text-align: center;
-      padding: 5px 8px;
-      border-radius: 6px;
+      padding: 5px;
+      border-radius: 5px;
       position: absolute;
-      z-index: 1;
-      bottom: 125%; /* Position above */
+      bottom: 120%;
       left: 50%;
       transform: translateX(-50%);
       opacity: 0;
       transition: opacity 0.3s;
+      z-index: 1;
     }
 
     .tooltip:hover .tooltiptext {
@@ -85,106 +87,26 @@
       opacity: 1;
     }
 
-    @media screen and (max-width: 768px) {
-      table, thead, tbody, th, td, tr {
-        display: block;
-      }
-
-      th, td {
-        text-align: left;
-        padding: 10px;
-      }
-
-      tr {
-        margin-bottom: 1rem;
-      }
+    caption {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px;
     }
   </style>
 </head>
 <body>
-  <h1>Timetable</h1>
-  <caption>II-II CSE-B</caption>
-  <table>
-    <tr>
-      <th>TIME/DAY</th>
-      <th>9-10AM</th>
-      <th>10-11AM</th>
-      <th>11-12PM</th>
-      <th>12-12:30PM</th>
-      <th>12:30-1:30PM</th>
-      <th>1:30-2:20PM</th>
-      <th>2:20-3:10PM</th>
-      <th>3:10-4:00PM</th>
-    </tr>
-    <tr>
-      <th>MONDAY</th>
-      <td colspan="3" class="tooltip">DTI LAB
-        <span class="tooltiptext">Mrs. P. Lakshmi Satya</span>
-      </td>
-      <td rowspan="6">LUNCH</td>
-      <td class="tooltip">P&S
-        <span class="tooltiptext">Mr. P. Madhu Babu</span>
-      </td>
-      <td class="tooltip">MEFA
-        <span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span>
-      </td>
-      <td class="tooltip">SE
-        <span class="tooltiptext">Mr. Y. Manas Kumar</span>
-      </td>
-      <td class="tooltip">OS
-        <span class="tooltiptext">Mrs. P. Lakshmi Satya</span>
-      </td>
-    </tr>
-    <tr>
-      <th>TUESDAY</th>
-      <td class="tooltip">APT<span class="tooltiptext">Mr. P. Prasad Babu</span></td>
-      <td class="tooltip">P&S<span class="tooltiptext">Mr. P. Madhu Babu</span></td>
-      <td class="tooltip">DBMS<span class="tooltiptext">Dr. Y. Jayababu</span></td>
-      <td class="tooltip">SS<span class="tooltiptext">Mr. G. Venkata Ratnam</span></td>
-      <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
-      <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
-      <td class="tooltip">TECH C<span class="tooltiptext">Mr. K.T.K. Mohan</span></td>
-    </tr>
-    <tr>
-      <th>WEDNESDAY</th>
-      <td class="tooltip">OS LAB<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
-      <td class="tooltip">OS LAB<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
-      <td class="tooltip">OS LAB<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
-      <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
-      <td class="tooltip">MEFA<span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span></td>
-      <td class="tooltip">DBMS<span class="tooltiptext">Dr. Y. Jayababu</span></td>
-      <td class="tooltip">P&S<span class="tooltiptext">Mr. P. Madhu Babu</span></td>
-    </tr>
-    <tr>
-      <th>THURSDAY</th>
-      <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
-      <td class="tooltip">MEFA<span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span></td>
-      <td class="tooltip">DBMS<span class="tooltiptext">Dr. Y. Jayababu</span></td>
-      <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
-      <td colspan="3" class="tooltip">DBMS LAB
-        <span class="tooltiptext">Dr. M. Uma Devi / Dr. Y. Jayababu</span>
-      </td>
-    </tr>
-    <tr>
-      <th>FRIDAY</th>
-      <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
-      <td class="tooltip">MEFA<span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span></td>
-      <td class="tooltip">DBMS<span class="tooltiptext">Dr. Y. Jayababu</span></td>
-      <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
-      <td class="tooltip">P&S<span class="tooltiptext">Mr. P. Madhu Babu</span></td>
-      <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
-      <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
-    </tr>
-    <tr>
-      <th>SATURDAY</th>
-      <td colspan="3" class="tooltip">FSTD-1 LAB
-        <span class="tooltiptext">Mr. Y. Manas Kumar</span>
-      </td>
-      <td class="tooltip">P&S<span class="tooltiptext">Mr. P. Madhu Babu</span></td>
-      <td class="tooltip">MEFA<span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span></td>
-      <td class="tooltip">DBMS<span class="tooltiptext">Dr. Y. Jayababu</span></td>
-      <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
-    </tr>
-  </table>
-</body>
-</html>
+
+  <!-- Pragati College Heading -->
+  <div class="header">
+    <h2>PRAGATI ENGINEERING COLLEGE</h2>
+    <p>(Approved by AICTE, Permanently Affiliated to JNTUK Kakinada & Accredited by NBA)</p>
+    <p>#1-378, ADB Road, Surampalem, E.G. District, A.P. – 533 437</p>
+    <p>Ph: (08852) 252233, Fax: (08852) 252232 | Website: 
+      <a href="http://www.pragati.ac.in" target="_blank">www.pragati.ac.in</a>
+    </p>
+    <p><strong>DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING</strong></p>
+    <p><strong>2024–25 WEF 02.12.24 | II CSE 'B' | II SEM | Room No. G-9</strong></p>
+  </div>
+
+  <!-- Time
+
