@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Timetable - Pragati Engineering College</title>
+  <title>Pragati Timetable</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f6f8;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #f5f5f5;
       margin: 0;
       padding: 20px;
     }
@@ -17,7 +17,7 @@
       text-align: center;
       font-family: 'Times New Roman', Times, serif;
       line-height: 1.6;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .college-header h2 {
@@ -29,132 +29,64 @@
     }
 
     .college-header a {
-      color: #004080;
       text-decoration: none;
+      color: #004080;
+    }
+
+    .college-subheading {
+      border-top: 2px solid #444;
+      padding-top: 5px;
+      font-weight: bold;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      background-color: white;
-      border-radius: 10px;
+      background: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 6px;
       overflow: hidden;
     }
 
-    caption {
-      text-align: center;
-      font-size: 18px;
-      font-weight: bold;
-      margin: 10px 0;
-      color: #555;
-    }
-
     th, td {
-      border: 1px solid #ddd;
-      padding: 12px;
+      border: 1px solid #ccc;
+      padding: 10px;
       text-align: center;
-      position: relative;
     }
 
     th {
-      background-color: #f0e6d6;
-      color: #222;
+      background-color: #eee8dc;
+      font-weight: bold;
     }
 
     td[colspan] {
-      background-color: #ffe5b4;
+      background-color: #fce5b2;
       font-weight: bold;
     }
 
     td[rowspan] {
-      background-color: #f7f7f7;
+      background-color: #f9f9f9;
       font-weight: bold;
-      color: #444;
     }
 
+    /* Tooltip style */
     .tooltip {
       position: relative;
       cursor: pointer;
+      display: inline-block;
     }
 
     .tooltip .tooltiptext {
       visibility: hidden;
-      width: 160px;
+      width: 180px;
       background-color: #333;
       color: #fff;
       text-align: center;
-      padding: 5px 8px;
+      padding: 6px;
       border-radius: 6px;
       position: absolute;
       z-index: 1;
-      bottom: 125%;
+      bottom: 130%;
       left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
+      transform: tran
 
-    .tooltip:hover .tooltiptext {
-      visibility: visible;
-      opacity: 1;
-    }
-
-    @media screen and (max-width: 768px) {
-      table, thead, tbody, th, td, tr {
-        display: block;
-      }
-
-      th, td {
-        text-align: left;
-        padding: 10px;
-      }
-
-      tr {
-        margin-bottom: 1rem;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Header section -->
-  <div class="college-header">
-    <h2>PRAGATI ENGINEERING COLLEGE</h2>
-    <p>(Approved by AICTE, Permanently Affiliated to JNTUK Kakinada & Accredited by NBA)</p>
-    <p># 1-378, ADB Road, Surampalem, E.G. District, A.P. – 533 437</p>
-    <p>Ph: (08852) 252233, Fax: (08852) 252232 &nbsp; Website: 
-      <a href="http://www.pragati.ac.in" target="_blank">www.pragati.ac.in</a>
-    </p>
-    <p><strong>DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING</strong></p>
-    <p style="margin-top: 6px; font-weight: bold;">2024–25 WEF 02.12.24 &nbsp;&nbsp; III CSE 'B' &nbsp;&nbsp; II SEM &nbsp;&nbsp; Room No. G-9</p>
-  </div>
-
-  <!-- Timetable -->
-  <table>
-    <tr>
-      <th>TIME/DAY</th>
-      <th>9-10AM</th>
-      <th>10-11AM</th>
-      <th>11-12PM</th>
-      <th>12-12:30PM</th>
-      <th>12:30-1:30PM</th>
-      <th>1:30-2:20PM</th>
-      <th>2:20-3:10PM</th>
-      <th>3:10-4:00PM</th>
-    </tr>
-    <tr>
-      <th>MONDAY</th>
-      <td colspan="3" class="tooltip">DTI LAB
-        <span class="tooltiptext">Mrs. P. Lakshmi Satya</span>
-      </td>
-      <td rowspan="6">LUNCH</td>
-      <td class="tooltip">P&S<span class="tooltiptext">Mr. P. Madhu Babu</span></td>
-      <td class="tooltip">MEFA<span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span></td>
-      <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
-      <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
-    </tr>
-    <tr>
-      <th>TUESDAY</th>
-      <td class="tooltip">APT<span class="tooltiptext">Mr. P. Prasad Babu</span></td>
-      <td class="tooltip">P&S<span cl
