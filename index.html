@@ -57,16 +57,6 @@
       background-color: #f0e9dd;
     }
 
-    td[colspan="3"] {
-      background-color: #fde5a2;
-      font-weight: bold;
-    }
-
-    td[rowspan] {
-      background-color: #f9f9f9;
-      font-weight: bold;
-    }
-
     .tooltip {
       cursor: help;
       position: relative;
@@ -95,11 +85,20 @@
       visibility: visible;
       opacity: 1;
     }
+
+    .lab {
+      background-color: #fde5a2;
+      font-weight: bold;
+    }
+
+    .lunch {
+      background-color: #f0f0f0;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <div class="header">
     <h2>PRAGATI ENGINEERING COLLEGE</h2>
     <p>(Approved by AICTE, Permanently Affiliated to JNTUK Kakinada & Accredited by NBA)</p>
@@ -109,14 +108,13 @@
     <p class="subheading">2024–25 WEF 02.12.24 &nbsp; | &nbsp; III CSE 'B' &nbsp; | &nbsp; II SEM &nbsp; | &nbsp; Room No. G-9</p>
   </div>
 
-  <!-- Timetable -->
   <table>
     <tr>
       <th rowspan="2">Days</th>
       <th>1</th>
       <th>2</th>
       <th>3</th>
-      <th rowspan="2">12:00–12:30pm</th>
+      <th>12:00–12:30pm</th>
       <th>4</th>
       <th>5</th>
       <th>6</th>
@@ -126,6 +124,7 @@
       <th>09:00–10:00am</th>
       <th>10:00–11:00am</th>
       <th>11:00–12:00pm</th>
+      <th>LUNCH</th>
       <th>12:30–01:30pm</th>
       <th>01:30–02:20pm</th>
       <th>02:20–03:10pm</th>
@@ -134,10 +133,8 @@
 
     <tr>
       <th>MON</th>
-      <td colspan="3" class="tooltip">DTI LAB
-        <span class="tooltiptext">Mrs. P. Lakshmi Satya</span>
-      </td>
-      <td rowspan="6"><strong>LUNCH</strong></td>
+      <td colspan="3" class="lab tooltip">DTI LAB<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
+      <td class="lunch">LUNCH</td>
       <td class="tooltip">P&S<span class="tooltiptext">Mr. P. Madhu Babu</span></td>
       <td class="tooltip">MEFA<span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span></td>
       <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
@@ -149,6 +146,7 @@
       <td class="tooltip">APT<span class="tooltiptext">Mr. P. Prasad Babu</span></td>
       <td class="tooltip">P&S<span class="tooltiptext">Mr. P. Madhu Babu</span></td>
       <td class="tooltip">DBMS<span class="tooltiptext">Dr. Y. Jayababu</span></td>
+      <td class="lunch">LUNCH</td>
       <td class="tooltip">SS<span class="tooltiptext">Mr. G. Venkata Ratnam</span></td>
       <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
       <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
@@ -157,9 +155,8 @@
 
     <tr>
       <th>WED</th>
-      <td colspan="3" class="tooltip">OS LAB
-        <span class="tooltiptext">Mrs. P. Lakshmi Satya</span>
-      </td>
+      <td colspan="3" class="lab tooltip">OS LAB<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
+      <td class="lunch">LUNCH</td>
       <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
       <td class="tooltip">MEFA<span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span></td>
       <td class="tooltip">DBMS<span class="tooltiptext">Dr. Y. Jayababu</span></td>
@@ -171,10 +168,9 @@
       <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
       <td class="tooltip">MEFA<span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span></td>
       <td class="tooltip">DBMS<span class="tooltiptext">Dr. Y. Jayababu</span></td>
+      <td class="lunch">LUNCH</td>
       <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
-      <td colspan="3" class="tooltip">DBMS LAB
-        <span class="tooltiptext">Dr. M. Uma Devi / Dr. Y. Jayababu</span>
-      </td>
+      <td colspan="3" class="lab tooltip">DBMS LAB<span class="tooltiptext">Dr. M. Uma Devi / Dr. Y. Jayababu</span></td>
     </tr>
 
     <tr>
@@ -182,24 +178,23 @@
       <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
       <td class="tooltip">MEFA<span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span></td>
       <td class="tooltip">DBMS<span class="tooltiptext">Dr. Y. Jayababu</span></td>
-      <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
+      <td class="lunch">LUNCH</td>
       <td class="tooltip">P&S<span class="tooltiptext">Mr. P. Madhu Babu</span></td>
       <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
       <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
+      <td></td>
     </tr>
 
     <tr>
       <th>SAT</th>
-      <td colspan="3" class="tooltip">FSTD-1 LAB
-        <span class="tooltiptext">Mr. Y. Manas Kumar</span>
-      </td>
+      <td colspan="3" class="lab tooltip">FSTD-1 LAB<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
+      <td class="lunch">LUNCH</td>
       <td class="tooltip">P&S<span class="tooltiptext">Mr. P. Madhu Babu</span></td>
       <td class="tooltip">MEFA<span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span></td>
       <td class="tooltip">DBMS<span class="tooltiptext">Dr. Y. Jayababu</span></td>
       <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
     </tr>
-  </table>
 
+  </table>
 </body>
 </html>
-
