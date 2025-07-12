@@ -50,13 +50,14 @@
       padding: 10px;
       text-align: center;
       font-size: 15px;
+      position: relative;
     }
 
     th {
       background-color: #f0e9dd;
     }
 
-    td[colspan] {
+    td[colspan="3"] {
       background-color: #fde5a2;
       font-weight: bold;
     }
@@ -67,25 +68,27 @@
     }
 
     .tooltip {
+      cursor: help;
       position: relative;
-      cursor: pointer;
+      display: inline-block;
     }
 
     .tooltip .tooltiptext {
       visibility: hidden;
-      width: 170px;
+      width: 180px;
       background-color: #333;
       color: #fff;
       text-align: center;
-      padding: 5px;
-      border-radius: 5px;
+      padding: 6px;
+      border-radius: 6px;
       position: absolute;
-      bottom: 120%;
+      z-index: 1;
+      bottom: 125%;
       left: 50%;
       transform: translateX(-50%);
       opacity: 0;
       transition: opacity 0.3s;
-      z-index: 1;
+      font-size: 13px;
     }
 
     .tooltip:hover .tooltiptext {
@@ -108,7 +111,6 @@
 
   <!-- Timetable -->
   <table>
-    <!-- Period numbers -->
     <tr>
       <th rowspan="2">Days</th>
       <th>1</th>
@@ -120,7 +122,6 @@
       <th>6</th>
       <th>7</th>
     </tr>
-    <!-- Timings -->
     <tr>
       <th>09:00–10:00am</th>
       <th>10:00–11:00am</th>
@@ -131,10 +132,11 @@
       <th>03:10–04:00pm</th>
     </tr>
 
-    <!-- Monday -->
     <tr>
       <th>MON</th>
-      <td colspan="3" class="tooltip">DTI LAB<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
+      <td colspan="3" class="tooltip">DTI LAB
+        <span class="tooltiptext">Mrs. P. Lakshmi Satya</span>
+      </td>
       <td rowspan="6"><strong>LUNCH</strong></td>
       <td class="tooltip">P&S<span class="tooltiptext">Mr. P. Madhu Babu</span></td>
       <td class="tooltip">MEFA<span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span></td>
@@ -142,7 +144,6 @@
       <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
     </tr>
 
-    <!-- Tuesday -->
     <tr>
       <th>TUE</th>
       <td class="tooltip">APT<span class="tooltiptext">Mr. P. Prasad Babu</span></td>
@@ -154,19 +155,17 @@
       <td class="tooltip">TECH C<span class="tooltiptext">Mr. K.T.K. Mohan</span></td>
     </tr>
 
-    <!-- Wednesday -->
     <tr>
       <th>WED</th>
-      <td class="tooltip">OS LAB<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
-      <td class="tooltip">OS LAB<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
-      <td class="tooltip">OS LAB<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
+      <td colspan="3" class="tooltip">OS LAB
+        <span class="tooltiptext">Mrs. P. Lakshmi Satya</span>
+      </td>
       <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
       <td class="tooltip">MEFA<span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span></td>
       <td class="tooltip">DBMS<span class="tooltiptext">Dr. Y. Jayababu</span></td>
       <td class="tooltip">P&S<span class="tooltiptext">Mr. P. Madhu Babu</span></td>
     </tr>
 
-    <!-- Thursday -->
     <tr>
       <th>THU</th>
       <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
@@ -178,7 +177,6 @@
       </td>
     </tr>
 
-    <!-- Friday -->
     <tr>
       <th>FRI</th>
       <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
@@ -190,7 +188,6 @@
       <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
     </tr>
 
-    <!-- Saturday -->
     <tr>
       <th>SAT</th>
       <td colspan="3" class="tooltip">FSTD-1 LAB
@@ -202,5 +199,7 @@
       <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
     </tr>
   </table>
+
 </body>
 </html>
+
