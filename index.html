@@ -8,7 +8,7 @@
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9f9;
+      background-color: #f4f6f8;
       margin: 0;
       padding: 20px;
     }
@@ -23,7 +23,7 @@
       text-align: center;
       font-size: 18px;
       font-weight: bold;
-      margin: 10px 0;
+      margin: 15px 0;
       color: #555;
     }
 
@@ -31,7 +31,7 @@
       width: 100%;
       border-collapse: separate;
       border-spacing: 0;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       background-color: white;
       border-radius: 10px;
       overflow: hidden;
@@ -41,6 +41,7 @@
       border: 1px solid #ddd;
       padding: 12px;
       text-align: center;
+      transition: background-color 0.3s ease;
     }
 
     th {
@@ -50,6 +51,7 @@
 
     td {
       background-color: #fff;
+      cursor: pointer;
     }
 
     td[colspan] {
@@ -64,7 +66,11 @@
     }
 
     tr:hover td {
-      background-color: #f5f5f5;
+      background-color: #f9f9f9;
+    }
+
+    .highlighted {
+      background-color: #b3e5fc !important;
     }
 
     @media screen and (max-width: 768px) {
@@ -158,5 +164,19 @@
       <td>SE</td>
     </tr>
   </table>
+
+  <script>
+    // Add highlighting on cell click
+    const cells = document.querySelectorAll("td");
+    cells.forEach(cell => {
+      cell.addEventListener("click", () => {
+        // Remove highlight from all
+        cells.forEach(c => c.classList.remove("highlighted"));
+        // Add to clicked
+        cell.classList.add("highlighted");
+      });
+    });
+  </script>
 </body>
 </html>
+
