@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/jpg" href="logo.jpg">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/jpg" href="logo.jpg" />
   <title>Timetable</title>
   <style>
     body {
@@ -110,69 +110,67 @@
     </tr>
     <tr>
       <th>MONDAY</th>
-      <td colspan="3">DTI LAB</td>
+      <td colspan="3" title="Mrs. P. Lakshmi Satya">DTI LAB</td>
       <td rowspan="6">LUNCH</td>
-      <td>P&S</td>
-      <td>MEFA</td>
-      <td>SE</td>
-      <td>OS</td>
+      <td title="Mr. P. Madhu Babu">P&S</td>
+      <td title="Mr. K. S. V. G. K. Murthy">MEFA</td>
+      <td title="Mr. Y. Manas Kumar">SE</td>
+      <td title="Mrs. P. Lakshmi Satya">OS</td>
     </tr>
     <tr>
       <th>TUESDAY</th>
-      <td>APT</td>
-      <td>P&S</td>
-      <td>DBMS</td>
-      <td>SS</td>
-      <td>OS</td>
-      <td>SE</td>
-      <td>TECH C</td>
+      <td title="Mr. P. Prasad Babu">APT</td>
+      <td title="Mr. P. Madhu Babu">P&S</td>
+      <td title="Dr. Y. Jayababu">DBMS</td>
+      <td title="Mr. G. Venkata Ratnam">SS</td>
+      <td title="Mrs. P. Lakshmi Satya">OS</td>
+      <td title="Mr. Y. Manas Kumar">SE</td>
+      <td title="Mr. K. T. K. Mohan">TECH C</td>
     </tr>
     <tr>
       <th>WEDNESDAY</th>
-      <td>OS LAB</td>
-      <td>OS LAB</td>
-      <td>OS LAB</td>
-      <td>SE</td>
-      <td>MEFA</td>
-      <td>DBMS</td>
-      <td>P&S</td>
+      <td title="Mrs. P. Lakshmi Satya">OS LAB</td>
+      <td title="Mrs. P. Lakshmi Satya">OS LAB</td>
+      <td title="Mrs. P. Lakshmi Satya">OS LAB</td>
+      <td title="Mr. Y. Manas Kumar">SE</td>
+      <td title="Mr. K. S. V. G. K. Murthy">MEFA</td>
+      <td title="Dr. Y. Jayababu">DBMS</td>
+      <td title="Mr. P. Madhu Babu">P&S</td>
     </tr>
     <tr>
       <th>THURSDAY</th>
-      <td>OS</td>
-      <td>MEFA</td>
-      <td>DBMS</td>
-      <td>OS</td>
-      <td colspan="3">DBMS LAB</td>
+      <td title="Mrs. P. Lakshmi Satya">OS</td>
+      <td title="Mr. K. S. V. G. K. Murthy">MEFA</td>
+      <td title="Dr. Y. Jayababu">DBMS</td>
+      <td title="Mrs. P. Lakshmi Satya">OS</td>
+      <td colspan="3" title="Dr. M. Uma Devi / Dr. Y. Jayababu">DBMS LAB</td>
     </tr>
     <tr>
       <th>FRIDAY</th>
-      <td>SE</td>
-      <td>MEFA</td>
-      <td>DBMS</td>
-      <td>OS</td>
-      <td>P&S</td>
-      <td>SE</td>
-      <td>OS</td>
+      <td title="Mr. Y. Manas Kumar">SE</td>
+      <td title="Mr. K. S. V. G. K. Murthy">MEFA</td>
+      <td title="Dr. Y. Jayababu">DBMS</td>
+      <td title="Mrs. P. Lakshmi Satya">OS</td>
+      <td title="Mr. P. Madhu Babu">P&S</td>
+      <td title="Mr. Y. Manas Kumar">SE</td>
+      <td title="Mrs. P. Lakshmi Satya">OS</td>
     </tr>
     <tr>
       <th>SATURDAY</th>
-      <td colspan="3">FSTD-1 LAB</td>
-      <td>P&S</td>
-      <td>MEFA</td>
-      <td>DBMS</td>
-      <td>SE</td>
+      <td colspan="3" title="Mr. Y. Manas Kumar">FSTD-1 LAB</td>
+      <td title="Mr. P. Madhu Babu">P&S</td>
+      <td title="Mr. K. S. V. G. K. Murthy">MEFA</td>
+      <td title="Dr. Y. Jayababu">DBMS</td>
+      <td title="Mr. Y. Manas Kumar">SE</td>
     </tr>
   </table>
 
   <script>
-    // Add highlighting on cell click
+    // Highlight cell on click
     const cells = document.querySelectorAll("td");
     cells.forEach(cell => {
       cell.addEventListener("click", () => {
-        // Remove highlight from all
         cells.forEach(c => c.classList.remove("highlighted"));
-        // Add to clicked
         cell.classList.add("highlighted");
       });
     });
