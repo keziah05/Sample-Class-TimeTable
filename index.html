@@ -88,5 +88,138 @@
       z-index: 1;
       bottom: 130%;
       left: 50%;
-      transform: tran
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
 
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    @media screen and (max-width: 768px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      th, td {
+        padding: 8px;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- College Header -->
+  <div class="college-header">
+    <h2>PRAGATI ENGINEERING COLLEGE</h2>
+    <p>(Approved by AICTE, Permanently Affiliated to JNTUK Kakinada & Accredited by NBA)</p>
+    <p>#1-378, ADB Road, Surampalem, E.G. District, A.P. – 533 437</p>
+    <p>Ph: (08852) 252233, Fax: (08852) 252232 &nbsp; Website: <a href="http://www.pragati.ac.in" target="_blank">www.pragati.ac.in</a></p>
+    <p><strong>DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING</strong></p>
+    <p class="college-subheading">2024–25 WEF 02.12.24 &nbsp; | &nbsp; III CSE 'B' &nbsp; | &nbsp; II SEM &nbsp; | &nbsp; Room No. G-9</p>
+  </div>
+
+  <!-- Timetable Table -->
+  <table>
+    <!-- Period Numbers -->
+    <tr>
+      <th rowspan="2">Days</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th rowspan="2">12:00–12:30pm</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+    </tr>
+
+    <!-- Timings -->
+    <tr>
+      <th>09:00–10:00am</th>
+      <th>10:00–11:00am</th>
+      <th>11:00–12:00pm</th>
+      <th>12:30–01:30pm</th>
+      <th>01:30–02:20pm</th>
+      <th>02:20–03:10pm</th>
+      <th>03:10–04:00pm</th>
+    </tr>
+
+    <!-- Monday -->
+    <tr>
+      <th>MON</th>
+      <td colspan="3" class="tooltip">DTI LAB
+        <span class="tooltiptext">Mrs. P. Lakshmi Satya</span>
+      </td>
+      <td rowspan="6"><strong>LUNCH</strong></td>
+      <td class="tooltip">P&S<span class="tooltiptext">Mr. P. Madhu Babu</span></td>
+      <td class="tooltip">MEFA<span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span></td>
+      <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
+      <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
+    </tr>
+
+    <!-- Tuesday -->
+    <tr>
+      <th>TUE</th>
+      <td class="tooltip">APT<span class="tooltiptext">Mr. P. Prasad Babu</span></td>
+      <td class="tooltip">P&S<span class="tooltiptext">Mr. P. Madhu Babu</span></td>
+      <td class="tooltip">DBMS<span class="tooltiptext">Dr. Y. Jayababu</span></td>
+      <td class="tooltip">SS<span class="tooltiptext">Mr. G. Venkata Ratnam</span></td>
+      <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
+      <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
+      <td class="tooltip">TECH C<span class="tooltiptext">Mr. K.T.K. Mohan</span></td>
+    </tr>
+
+    <!-- Wednesday -->
+    <tr>
+      <th>WED</th>
+      <td class="tooltip">OS LAB<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
+      <td class="tooltip">OS LAB<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
+      <td class="tooltip">OS LAB<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
+      <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
+      <td class="tooltip">MEFA<span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span></td>
+      <td class="tooltip">DBMS<span class="tooltiptext">Dr. Y. Jayababu</span></td>
+      <td class="tooltip">P&S<span class="tooltiptext">Mr. P. Madhu Babu</span></td>
+    </tr>
+
+    <!-- Thursday -->
+    <tr>
+      <th>THU</th>
+      <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
+      <td class="tooltip">MEFA<span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span></td>
+      <td class="tooltip">DBMS<span class="tooltiptext">Dr. Y. Jayababu</span></td>
+      <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
+      <td colspan="3" class="tooltip">DBMS LAB
+        <span class="tooltiptext">Dr. M. Uma Devi / Dr. Y. Jayababu</span>
+      </td>
+    </tr>
+
+    <!-- Friday -->
+    <tr>
+      <th>FRI</th>
+      <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
+      <td class="tooltip">MEFA<span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span></td>
+      <td class="tooltip">DBMS<span class="tooltiptext">Dr. Y. Jayababu</span></td>
+      <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
+      <td class="tooltip">P&S<span class="tooltiptext">Mr. P. Madhu Babu</span></td>
+      <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
+      <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
+    </tr>
+
+    <!-- Saturday -->
+    <tr>
+      <th>SAT</th>
+      <td colspan="3" class="tooltip">FSTD-1 LAB
+        <span class="tooltiptext">Mr. Y. Manas Kumar</span>
+      </td>
+      <td class="tooltip">P&S<span class="tooltiptext">Mr. P. Madhu Babu</span></td>
+      <td class="tooltip">MEFA<span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span></td>
+      <td class="tooltip">DBMS<span class="tooltiptext">Dr. Y. Jayababu</span></td>
+      <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
+    </tr>
+  </table>
+</body>
+</html>
