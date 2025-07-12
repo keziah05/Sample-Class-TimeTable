@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/jpg" href="logo.jpg" />
-  <title>Timetable</title>
+  <title>Timetable with Custom Tooltips</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -19,6 +18,15 @@
       color: #333;
     }
 
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
     caption {
       text-align: center;
       font-size: 18px;
@@ -27,31 +35,16 @@
       color: #555;
     }
 
-    table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      background-color: white;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
     th, td {
       border: 1px solid #ddd;
       padding: 12px;
       text-align: center;
-      transition: background-color 0.3s ease;
+      position: relative;
     }
 
     th {
       background-color: #f0e6d6;
       color: #222;
-    }
-
-    td {
-      background-color: #fff;
-      cursor: pointer;
     }
 
     td[colspan] {
@@ -65,12 +58,31 @@
       color: #444;
     }
 
-    tr:hover td {
-      background-color: #f9f9f9;
+    .tooltip {
+      position: relative;
+      cursor: pointer;
     }
 
-    .highlighted {
-      background-color: #b3e5fc !important;
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 160px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 5px 8px;
+      border-radius: 6px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%; /* Position above */
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
     }
 
     @media screen and (max-width: 768px) {
@@ -78,17 +90,13 @@
         display: block;
       }
 
-      tr {
-        margin-bottom: 1rem;
-      }
-
       th, td {
         text-align: left;
         padding: 10px;
       }
 
-      th {
-        background-color: #f0e6d6;
+      tr {
+        margin-bottom: 1rem;
       }
     }
   </style>
@@ -110,71 +118,74 @@
     </tr>
     <tr>
       <th>MONDAY</th>
-      <td colspan="3" title="Mrs. P. Lakshmi Satya">DTI LAB</td>
+      <td colspan="3" class="tooltip">DTI LAB
+        <span class="tooltiptext">Mrs. P. Lakshmi Satya</span>
+      </td>
       <td rowspan="6">LUNCH</td>
-      <td title="Mr. P. Madhu Babu">P&S</td>
-      <td title="Mr. K. S. V. G. K. Murthy">MEFA</td>
-      <td title="Mr. Y. Manas Kumar">SE</td>
-      <td title="Mrs. P. Lakshmi Satya">OS</td>
+      <td class="tooltip">P&S
+        <span class="tooltiptext">Mr. P. Madhu Babu</span>
+      </td>
+      <td class="tooltip">MEFA
+        <span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span>
+      </td>
+      <td class="tooltip">SE
+        <span class="tooltiptext">Mr. Y. Manas Kumar</span>
+      </td>
+      <td class="tooltip">OS
+        <span class="tooltiptext">Mrs. P. Lakshmi Satya</span>
+      </td>
     </tr>
     <tr>
       <th>TUESDAY</th>
-      <td title="Mr. P. Prasad Babu">APT</td>
-      <td title="Mr. P. Madhu Babu">P&S</td>
-      <td title="Dr. Y. Jayababu">DBMS</td>
-      <td title="Mr. G. Venkata Ratnam">SS</td>
-      <td title="Mrs. P. Lakshmi Satya">OS</td>
-      <td title="Mr. Y. Manas Kumar">SE</td>
-      <td title="Mr. K. T. K. Mohan">TECH C</td>
+      <td class="tooltip">APT<span class="tooltiptext">Mr. P. Prasad Babu</span></td>
+      <td class="tooltip">P&S<span class="tooltiptext">Mr. P. Madhu Babu</span></td>
+      <td class="tooltip">DBMS<span class="tooltiptext">Dr. Y. Jayababu</span></td>
+      <td class="tooltip">SS<span class="tooltiptext">Mr. G. Venkata Ratnam</span></td>
+      <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
+      <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
+      <td class="tooltip">TECH C<span class="tooltiptext">Mr. K.T.K. Mohan</span></td>
     </tr>
     <tr>
       <th>WEDNESDAY</th>
-      <td title="Mrs. P. Lakshmi Satya">OS LAB</td>
-      <td title="Mrs. P. Lakshmi Satya">OS LAB</td>
-      <td title="Mrs. P. Lakshmi Satya">OS LAB</td>
-      <td title="Mr. Y. Manas Kumar">SE</td>
-      <td title="Mr. K. S. V. G. K. Murthy">MEFA</td>
-      <td title="Dr. Y. Jayababu">DBMS</td>
-      <td title="Mr. P. Madhu Babu">P&S</td>
+      <td class="tooltip">OS LAB<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
+      <td class="tooltip">OS LAB<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
+      <td class="tooltip">OS LAB<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
+      <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
+      <td class="tooltip">MEFA<span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span></td>
+      <td class="tooltip">DBMS<span class="tooltiptext">Dr. Y. Jayababu</span></td>
+      <td class="tooltip">P&S<span class="tooltiptext">Mr. P. Madhu Babu</span></td>
     </tr>
     <tr>
       <th>THURSDAY</th>
-      <td title="Mrs. P. Lakshmi Satya">OS</td>
-      <td title="Mr. K. S. V. G. K. Murthy">MEFA</td>
-      <td title="Dr. Y. Jayababu">DBMS</td>
-      <td title="Mrs. P. Lakshmi Satya">OS</td>
-      <td colspan="3" title="Dr. M. Uma Devi / Dr. Y. Jayababu">DBMS LAB</td>
+      <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
+      <td class="tooltip">MEFA<span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span></td>
+      <td class="tooltip">DBMS<span class="tooltiptext">Dr. Y. Jayababu</span></td>
+      <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
+      <td colspan="3" class="tooltip">DBMS LAB
+        <span class="tooltiptext">Dr. M. Uma Devi / Dr. Y. Jayababu</span>
+      </td>
     </tr>
     <tr>
       <th>FRIDAY</th>
-      <td title="Mr. Y. Manas Kumar">SE</td>
-      <td title="Mr. K. S. V. G. K. Murthy">MEFA</td>
-      <td title="Dr. Y. Jayababu">DBMS</td>
-      <td title="Mrs. P. Lakshmi Satya">OS</td>
-      <td title="Mr. P. Madhu Babu">P&S</td>
-      <td title="Mr. Y. Manas Kumar">SE</td>
-      <td title="Mrs. P. Lakshmi Satya">OS</td>
+      <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
+      <td class="tooltip">MEFA<span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span></td>
+      <td class="tooltip">DBMS<span class="tooltiptext">Dr. Y. Jayababu</span></td>
+      <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
+      <td class="tooltip">P&S<span class="tooltiptext">Mr. P. Madhu Babu</span></td>
+      <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
+      <td class="tooltip">OS<span class="tooltiptext">Mrs. P. Lakshmi Satya</span></td>
     </tr>
     <tr>
       <th>SATURDAY</th>
-      <td colspan="3" title="Mr. Y. Manas Kumar">FSTD-1 LAB</td>
-      <td title="Mr. P. Madhu Babu">P&S</td>
-      <td title="Mr. K. S. V. G. K. Murthy">MEFA</td>
-      <td title="Dr. Y. Jayababu">DBMS</td>
-      <td title="Mr. Y. Manas Kumar">SE</td>
+      <td colspan="3" class="tooltip">FSTD-1 LAB
+        <span class="tooltiptext">Mr. Y. Manas Kumar</span>
+      </td>
+      <td class="tooltip">P&S<span class="tooltiptext">Mr. P. Madhu Babu</span></td>
+      <td class="tooltip">MEFA<span class="tooltiptext">Mr. K.S.V.G.K. Murthy</span></td>
+      <td class="tooltip">DBMS<span class="tooltiptext">Dr. Y. Jayababu</span></td>
+      <td class="tooltip">SE<span class="tooltiptext">Mr. Y. Manas Kumar</span></td>
     </tr>
   </table>
-
-  <script>
-    // Highlight cell on click
-    const cells = document.querySelectorAll("td");
-    cells.forEach(cell => {
-      cell.addEventListener("click", () => {
-        cells.forEach(c => c.classList.remove("highlighted"));
-        cell.classList.add("highlighted");
-      });
-    });
-  </script>
 </body>
 </html>
 
