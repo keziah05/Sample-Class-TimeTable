@@ -1,101 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pragati Timetable</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: #f5f5f5;
-      padding: 20px;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pragati Timetable</title>
+<style>
+  body{
+    font-family:'Segoe UI',Tahoma,sans-serif;
+    background:#f5f5f5;
+    padding:20px;
+  }
 
-    .header {
-      text-align: center;
-      font-family: 'Times New Roman', Times, serif;
-      line-height: 1.6;
-    }
+  /* -------- KEY ALIGNMENT FIXES -------- */
+  table{                 /* same width for every column */
+    width:100%;
+    border-collapse:collapse;
+    table-layout:fixed;  /* <‑‑ NEW */
+    background:#fff;
+    box-shadow:0 0 10px rgba(0,0,0,.1);
+    margin-top:20px;
+  }
+  th.lunch,td.lunch{     /* <‑‑ NEW */
+    width:11%;
+  }
+  /* ------------------------------------- */
 
-    .header h2 {
-      margin: 0;
-    }
+  th,td{
+    border:1px solid #999;
+    padding:10px;
+    text-align:center;
+    font-size:15px;
+    position:relative;
+  }
+  th{background:#f0e9dd;}
 
-    .header p {
-      margin: 2px;
-    }
+  .lab{background:#fde5a2;font-weight:bold;}
+  .lunch{background:#f0f0f0;font-weight:bold;}
 
-    .header a {
-      color: #004080;
-      text-decoration: none;
-    }
-
-    .subheading {
-      border-top: 2px solid #000;
-      margin-top: 5px;
-      padding-top: 5px;
-      font-weight: bold;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-      background: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    th, td {
-      border: 1px solid #999;
-      padding: 10px;
-      text-align: center;
-      font-size: 15px;
-      position: relative;
-    }
-
-    th {
-      background-color: #f0e9dd;
-    }
-
-    .tooltip {
-      cursor: help;
-      position: relative;
-      display: inline-block;
-    }
-
-    .tooltip .tooltiptext {
-      visibility: hidden;
-      width: 180px;
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 6px;
-      border-radius: 6px;
-      position: absolute;
-      z-index: 1;
-      bottom: 125%;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      transition: opacity 0.3s;
-      font-size: 13px;
-    }
-
-    .tooltip:hover .tooltiptext {
-      visibility: visible;
-      opacity: 1;
-    }
-
-    .lab {
-      background-color: #fde5a2;
-      font-weight: bold;
-    }
-
-    .lunch {
-      background-color: #f0f0f0;
-      font-weight: bold;
-    }
-  </style>
+  .tooltip{cursor:help;display:inline-block;position:relative;}
+  .tooltip .tooltiptext{
+    visibility:hidden;opacity:0;
+    width:180px;background:#333;color:#fff;
+    text-align:center;padding:6px;border-radius:6px;
+    position:absolute;bottom:125%;left:50%;
+    transform:translateX(-50%);transition:opacity .3s;
+    font-size:13px;z-index:1;
+  }
+  .tooltip:hover .tooltiptext{visibility:visible;opacity:1;}
+</style>
 </head>
 <body>
 
